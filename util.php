@@ -44,41 +44,5 @@
             return $resut['totalsms'];
         }
         return 0;
-    }
-  function hideShow($bt){
-      $identif=$bt.id;
-      switch ($identif) {
-          case 'btn_durée':
-            $el=getElementById('duréeTotRéelAppel').style.display;
-            if($el == 'none'){
-              $el = block;
-            }else{
-              $el = none;
-            };
-              break;
-
-           case 'btn_sms':
-            $el=getElementById('totalSms').style.display;
-            if($el == 'none'){
-              $el = block;
-            }else{
-              $el = none;
-            };
-            break;
-            
-            case 'btn_volume':
-                $el=getElementById('topAboVolumData').style.display;
-              if($el == 'none'){
-                $el = block;
-              }else{
-               $el = none;
-              };
-                break;   
-          
-          default:
-              # code...
-              break;
-      }
-  }
-  
+    } 
 ?>

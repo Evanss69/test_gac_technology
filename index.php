@@ -66,16 +66,16 @@
 
 <div >
 <h2>Durée totale réelle des appels effectués après le 15/02/2012 (inclus) :</h2>
-    <button onclick=HideShow()  id="btn_durée" name="duréeTotRéelAppel" >DuréeTotalRéelAppel</button>
-    <p id='duréeTotRéelAppel' style='display=none; color: red;font-size:36px;'>"<?= $dureeAppel ?>"</p>
+  
+    <p id='duréeTotRéelAppel' style='color: red;font-size:36px;'>"<?= $dureeAppel ?>"</p>
    
     <h2>Quantité totale de SMS envoyés par l'ensemble des abonnés :</h2>
-      <button onclick=HideShow() id="btn_sms" name="totalSms" >TotalSMS</button>
-      <p id= 'totalSms' style='display=none;color: red;font-size:36px;'>"<?= $totalSms ?>"</p>
+
+      <p id= 'totalSms' style='color: red;font-size:36px;'>"<?= $totalSms ?>"</p>
    
     <h2>TOP 10 des volumes data facturés en dehors de la tranche horaire 8h00-18h00, par abonné :</h2>
-        <button onclick=HideShow() id="btn_volume" name="volumeDataFact" >Top10VolumeDataFact</button>
-        <table id='topAboVolumData' name="topAboVolumData" style='display=none;'>
+
+        <table id='topAboVolumData' name="topAboVolumData" >
                 <tr>
                     <th>Numéro abonné</th>
                     <th>Volume data facturé</th>
