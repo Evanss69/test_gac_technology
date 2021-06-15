@@ -5,7 +5,7 @@
      function getDuréeTotaleReelAppel()
 	{
         $date=new String('2012-02-15');
-        $sql = "SELECT  SUM( TIME_TO_SEC(duréeAppelRéel )  ) AS totalDuréeRéelleAppel FROM AppelTéléphonique WHERE typeConnexion like '%appel%'  AND dateAppel >= '".$date."'";
+        $sql = "SELECT  SUM( TIME_TO_SEC(duréeAppelRéel )  ) AS totalDuréeRéelleAppel FROM appel WHERE typeConnexion like '%appel%'  AND dateAppel >= '".$date."'";
         $result = $this->mysqli_query($conn, $sql);
         if($result) {
             $result = $result->fetch_array();
@@ -18,7 +18,7 @@
      function getTop10VolumesDataFacturésHorsService()
     {
         $sql = "SELECT numAbonné,duréeAppelFact
-                FROM AppelTéléphonique
+                FROM appel
                 WHERE heureAppel < '08:00:00'  OR heureAppel > '18:00:00' and typeConnexion like '%3G%'
                 GROUP BY numAbonné
                 ORDER BY cast(duréeAppelFact AS DECIMAL(10,3) ) /*COLLATE utf8_unicode_ci */DESC
@@ -37,7 +37,7 @@
      function getTotalSms(){
 
         $smsString =new String('%envoi de sms%');
-        $sql = "SELECT COUNT(*) AS totalsms FROM AppelTéléphonique WHERE typeConnexion like $smsString ";
+        $sql = "SELECT COUNT(*) AS totalsms FROM appel WHERE typeConnexion like $smsString ";
         $result = $this->mysqli_query($conn, $sql);
         if($result) {
             $resut = $resut->fetch_array();
