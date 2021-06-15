@@ -1,8 +1,8 @@
 <?php
   // Connect to database
   include("db_connect.php");
-  class Util{
-    public function getDuréeTotaleReelAppel()
+
+     function getDuréeTotaleReelAppel()
 	{
         $date=new String('2012-02-15');
         $sql = "SELECT  SUM( TIME_TO_SEC(duréeAppelRéel )  ) AS totalDuréeRéelleAppel FROM AppelTéléphonique WHERE typeConnexion like '%appel%'  AND dateAppel >= '".$date."'";
@@ -15,9 +15,9 @@
 	}
     // TOP 10 des volumes data facturés en dehors de la tranche horaire 8h00-18h00, par abonné.
 
-    public function getTop10VolumesDataFacturésHorsService()
+     function getTop10VolumesDataFacturésHorsService()
     {
-        $sql = "SELECT  id, compteFact, numFact, numAbonné, dateAppel, heureAppel, duréeAppelRéel ,duréeAppelFact, typeConnexion
+        $sql = "SELECT numAbonné,duréeAppelFact
                 FROM AppelTéléphonique
                 WHERE heureAppel < '08:00:00'  OR heureAppel > '18:00:00' and typeConnexion like '%3G%'
                 GROUP BY numAbonné
@@ -34,7 +34,7 @@
                 return null;
     }
     //quantité totale de SMS envoyés par l'ensemble des abonnés
-    public function getTotalSms(){
+     function getTotalSms(){
 
         $smsString =new String('%envoi de sms%');
         $sql = "SELECT COUNT(*) AS totalsms FROM AppelTéléphonique WHERE typeConnexion like $smsString ";
@@ -45,6 +45,40 @@
         }
         return 0;
     }
+  function hideShow($bt){
+      $identif=$bt.id;
+      switch ($identif) {
+          case 'btn_durée':
+            $el=getElementById('duréeTotRéelAppel').style.display;
+            if($el == 'none'){
+              $el = block;
+            }else{
+              $el = none;
+            };
+              break;
+
+           case 'btn_sms':
+            $el=getElementById('totalSms').style.display;
+            if($el == 'none'){
+              $el = block;
+            }else{
+              $el = none;
+            };
+            break;
+            
+            case 'btn_volume':
+                $el=getElementById('topAboVolumData').style.display;
+              if($el == 'none'){
+                $el = block;
+              }else{
+               $el = none;
+              };
+                break;   
+          
+          default:
+              # code...
+              break;
+      }
   }
   
 ?>
