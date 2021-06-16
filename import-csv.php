@@ -11,7 +11,7 @@
 
       while (($column = fgetcsv($file, 10000, ";")) !== FALSE) {
           if($row <3){$row++;continue;}
-          $j= susbstr($column[3],0,1);
+          $j= substr($column[3],0,1);
           $m = substr($column[3],2,4);
           $y= substr($column[3],5,8);
           $chaine=" '" . $y . "'-'" . $m . "'-'" . $j . "'";
