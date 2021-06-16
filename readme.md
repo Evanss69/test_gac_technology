@@ -5,7 +5,7 @@ Mini appli gestion de ticket téléphonique en PHP (version 7.3.12) avec MySQL (
 
 
     •Le délimiteur du fichier CSV  pour le test est ";" alors que généralement ","
-    •Prendre en compte format de données notamment pour la date jj/mm/yyyy alors que BD SQL yyyy/mm/jj
+    •Prendre en compte format de données notamment pour la date jj/mm/yyyy alors que BD SQL yyyy-mm-jj
 
 -Exploiter les données chargées en base de données pour réaliser les requêtes suivantes :
 
