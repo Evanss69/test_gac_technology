@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 15 juin 2021 à 15:10
+-- Généré le :  mer. 16 juin 2021 à 07:40
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `appel` (
   `typeConnexion` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `typeConnexion_idx` (`typeConnexion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
