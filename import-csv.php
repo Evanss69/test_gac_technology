@@ -15,7 +15,7 @@
           $m = substr($column[3],2,4);
           $y= substr($column[3],5,8);
           $chaine=" '" . $y . "'-'" . $m . "'-'" . $j . "'";
-         //$date = utf8_encode ( $chaine );
+
         $sql = "INSERT into appel (compteFact,numFact,numAbonné,dateAppel,heureAppel,duréeAppelRéel,duréeAppelFact,typeConnexion) 
         values ('" . $column[0] . "','" . $column[1] . "','" . $column[2] . "','" . $chaine . "','" . $column[4] . "','" . $column[5] . "','" . $column[6] . "','" . $column[7] .  "')";
       
