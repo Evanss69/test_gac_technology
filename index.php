@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html style='background-color: lightgrey;'>
 
 <head>
 <meta charset="UTF-8">
   <title>Gestionnaire tickets d'appels </title>
 </head>
-<body>
+<body style='width:100%;margin:auto;text-align:center;'>
 <header>
     <h1 style='text-align:center;'>Gestionnaire tickets d'appels</h1>
 </header>
-<form enctype="multipart/form-data" action="import-csv.php" method="post">
+<form enctype="multipart/form-data" action="import-csv.php" method="post" style='text-align:center;'>
         <div class="input-row">
-            <button type="submit" id="submit" name="import" class="btn-submit">Import</button>
+            <button type="submit" id="submit" name="import" class="btn-submit" style='margin:50px;text-align:center;'>Importer le fichier CSV</button>
             <br />
         </div>
 </form>
@@ -24,7 +24,8 @@
 
     if (mysqli_num_rows($result) > 0) {
 ?>
-<table>
+<div style='width:100%;height:100%;display:flex;justify-content:center;'>
+<table style='text-align:center;margin:20px;padding:20px;'>
             <thead>
                 <tr>               
                     <th>ID Appel</th>
@@ -54,6 +55,7 @@
                     <?php } ?>
                 </tbody>
 </table>
+</div>
 <?php include("util.php") ;
     $dureeAppel=getDuréeTotaleReelAppel();
    $totalSms=getTotalSms();
@@ -71,7 +73,8 @@
    
     <h2>TOP 10 des volumes data facturés en dehors de la tranche horaire 8h00-18h00, par abonné :</h2>
 
-        <table id='topAboVolumData' name="topAboVolumData" >
+    <div style='width:100%;height:100%;display:flex;justify-content:center;'>
+    <table id='topAboVolumData' name="topAboVolumData" style='text-align:center;margin:20px;padding:20px;' >
                 <tr>
                     <th>Numéro abonné</th>
                     <th>Volume data facturé</th>
@@ -82,6 +85,7 @@
                         <td><?= $volumeAbo['duréeAppelFact']?></td>
                     </tr>
                 <?php endforeach ?>
+    </div>
 </div>
 <?php } ?>
 
