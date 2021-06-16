@@ -1,4 +1,4 @@
-Mini appli gestion de ticket téléphonique en PHP avec MySQL
+Mini appli gestion de ticket téléphonique en PHP (version 7.3.12) avec MySQL (version 8.0.18)
 
 -Importer  fichier CSV et ses données dans une BD:
 
