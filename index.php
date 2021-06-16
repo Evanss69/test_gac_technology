@@ -11,11 +11,7 @@
 </header>
 <form enctype="multipart/form-data" action="import-csv.php" method="post">
         <div class="input-row">
-            <label class="col-md-4 control-label">Choisir un fichier CSV</label>
-            <input type="file" name="file" id="file" accept=".csv">
-            <br />
-            <br />
-            <button type="submit" id="submit" name="Import" class="btn-submit">Import</button>
+            <button type="submit" id="submit" name="import" class="btn-submit">Import</button>
             <br />
         </div>
 </form>
@@ -83,9 +79,7 @@
                 <?php foreach ($volumeData as $volumeAbo):?>
                     <tr>
                         <td><?= $volumeAbo['numAbonné'] ?></td>
-                        <?php foreach ($volumeAbo['duréeAppelFact'] as $volumeFact):?>
-                        <td><?= $volumeFact?></td>
-                        <?php endforeach ?>
+                        <td><?= $volumeAbo['duréeAppelFact']?></td>
                     </tr>
                 <?php endforeach ?>
 </div>
